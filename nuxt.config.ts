@@ -17,9 +17,6 @@ export default defineNuxtConfig({
     }
     // ...
   },
-  css: [
-    '~/assets/css/main.css'
-  ],
   runtimeConfig: {
     // 只在服务器端可用的私有键
     apiSecret: '123',
@@ -38,7 +35,10 @@ export default defineNuxtConfig({
       },
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/styles/default" as *;'
+          additionalData: ` 
+            @use "@/assets/styles/variable.scss" as *;
+            @use "@/assets/styles/index.scss" as *;
+          `
         }
       }
     }

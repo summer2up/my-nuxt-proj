@@ -8,7 +8,7 @@
 </script>
 
 <style lang="scss">
-@use '@/assets/styles/default.scss';
+@use '@/assets/styles/variable.scss';
 
 .about {
   color: $color;
