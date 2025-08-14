@@ -1,16 +1,17 @@
 <template>
   <div>
-    <nuxt-link to="/about">About</nuxt-link>
+    <nuxt-link to="/about" class="about">About</nuxt-link>
   </div>
 </template>
-
 <script lang="ts" setup>
-// const route = useRoute()
-onMounted(() => {
-  // console.log('Current route:', route.path)
-})
+
 </script>
 
-<style>
+<style lang="scss">
+@use '@/assets/styles/default.scss';
 
+.about {
+  color: $color;
+  font-size: $font-size;
+}
 </style>

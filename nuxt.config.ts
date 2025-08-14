@@ -38,7 +38,7 @@ export default defineNuxtConfig({
       },
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/_colors.scss" as *;'
+          additionalData: '@use "@/assets/styles/default" as *;'
         }
       }
     }
@@ -48,9 +48,13 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' }
   },
   modules: [
+    'my-module',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@nuxt/eslint',
+    '@vueuse/nuxt',
+    '@vueuse/nuxt',
+    '@element-plus/nuxt'
   ],
   sourcemap: {
     server: true,
