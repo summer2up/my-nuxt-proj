@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
     port: 3000
   },
+
   routeRules: {
     // 为了SEO目的，在构建时生成
     '/': { prerender: true },
@@ -38,6 +39,7 @@ export default defineNuxtConfig({
           additionalData: ` 
             @use "@/assets/styles/variable.scss" as *;
             @use "@/assets/styles/index.scss" as *;
+            @user "@/assets/styles/mixin.scss" as *;
           `
         }
       }
@@ -54,7 +56,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vueuse/nuxt',
     '@vueuse/nuxt',
-    '@element-plus/nuxt'
+    '@element-plus/nuxt',
+    'nuxt-icon',
   ],
   sourcemap: {
     server: true,
