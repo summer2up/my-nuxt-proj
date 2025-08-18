@@ -1,7 +1,9 @@
 <template>
   <div class="origin-container flex flex-col justify-center items-center">
     <div class="flex justify-center items-center text-center w-[50%]">
-			KUN is an artist who pushes the boundaries of music and performance. KUN creates high-concept, audio and visual experiences that strive to bridge genres, cultures, and artistic conventions, connecting with audiences worldwide.	
+			KUN is an artist who pushes the boundaries of music and performance. 
+      KUN creates high-concept, audio and visual experiences that strive to bridge genres, cultures, 
+      and artistic conventions, connecting with audiences worldwide.	
     </div>
     <div class="flex justify-center items-center text-center w-[50%] h-[50px]">
        <Icon 
