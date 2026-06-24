@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   devServer: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 3000
   },
 
@@ -39,7 +39,7 @@ export default defineNuxtConfig({
           additionalData: ` 
             @use "@/assets/styles/variable.scss" as *;
             @use "@/assets/styles/index.scss" as *;
-            @user "@/assets/styles/mixin.scss" as *;
+            @use "@/assets/styles/mixin.scss" as *;
           `
         }
       }

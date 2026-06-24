@@ -1,5 +1,5 @@
 <template>
-  <div class="origin-container flex flex-col justify-center items-center">
+  <div class="origin flex flex-col justify-center items-center">
     <div class="flex justify-center items-center text-center w-[50%]">
 			KUN is an artist who pushes the boundaries of music and performance. 
       KUN creates high-concept, audio and visual experiences that strive to bridge genres, cultures, 
@@ -29,3 +29,11 @@ const state = reactive({
 const {menuList} = toRefs(state)
 
 </script>
+
+<style lang="scss" scoped>
+@use '@/assets/styles/variable.scss';
+
+.origin {
+  height: calc(100vh - #{$footerHight} - #{$headerHight});
+}
+</style>
