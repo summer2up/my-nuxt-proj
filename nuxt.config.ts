@@ -71,8 +71,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vueuse/nuxt',
     '@element-plus/nuxt',
-    'nuxt-icon',,
-    '@vueuse/motion/nuxt',,
+    '@nuxt/icon',
+    '@nuxt/image',
+    'nuxt-icon',
+    '@vueuse/motion/nuxt',
     '@hypernym/nuxt-gsap',
   ],
   sourcemap: {
