@@ -1,13 +1,13 @@
 <template>
-  <div>
-    
-  </div>
+  <div class="container"/>
 </template>
 
 <script lang="ts" setup>
-
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@use '@/assets/styles/variable.scss';
+.container {
+  height: calc(100vh - #{$footerHight} - #{$headerHight});
+}
 </style>

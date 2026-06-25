@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     host: 'localhost',
     port: 3000
   },
-
   routeRules: {
     // 为了SEO目的，在构建时生成
     '/': { prerender: true },
@@ -24,6 +23,21 @@ export default defineNuxtConfig({
     // public中的键也可以在客户端使用
     public: {
       apiBase: '/api'
+    }
+  },
+  css: ['./assets/styles/main.css'],
+  postcss: {
+    plugins: {
+      'postcss-import': {
+        resolve(id: string) {
+          // 让 tailwindcss 和 nuxt/ui 的 @import 交给 Tailwind 自己处理
+          if (id === 'tailwindcss' || id === '@nuxt/ui') {
+            return false
+          }
+        }
+      },
+      tailwindcss: {},
+      autoprefixer: {},
     }
   },
   vite: {
@@ -57,7 +71,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vueuse/nuxt',
     '@element-plus/nuxt',
-    'nuxt-icon',
+    'nuxt-icon',,
+    '@vueuse/motion/nuxt',,
+    '@hypernym/nuxt-gsap',
   ],
   sourcemap: {
     server: true,

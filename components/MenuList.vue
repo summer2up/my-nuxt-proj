@@ -1,5 +1,5 @@
 <template>
-  <div :class="['flex', { 'flex-col': align === 'vertical' }]">
+  <div class="grid grid-cols-4 gap-4">
     <nuxt-link class="item" to="/">home</nuxt-link>
     <nuxt-link class="item" to="/live">live</nuxt-link>
     <nuxt-link class="item" to="/origins">origins</nuxt-link>

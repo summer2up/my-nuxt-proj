@@ -17,6 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["nuxt"],                    // 确保能识别 Nuxt 的 module augmentation
+    "typeRoots": ["./node_modules/@types", "./types"] 
   },
 }
