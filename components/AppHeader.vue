@@ -1,18 +1,29 @@
 <template>
-  <div class="home-container w-full z-9999">
-    <div class="header-common  hidden-sm-and-down">
-      <MenuList/>
+  <header
+    class="home-container w-full pointer-events-auto"
+    :class="{ 'home-container--overlay': overlay }"
+  >
+    <div class="header-common hidden-sm-and-down">
+      <MenuList />
     </div>
-  </div>
-    
+  </header>
 </template>
 
 <script lang="ts" setup>
-
-</script >
+defineProps({
+  overlay: {
+    type: Boolean,
+    default: false,
+  },
+})
+</script>
 <style lang="scss" scoped>
 @use "@/assets/styles/variable.scss";
 .header-common {
   height: $headerHight
+}
+
+.home-container--overlay {
+  background: transparent;
 }
 </style>

@@ -1,33 +1,60 @@
 <template>
-  <div class="kun-container min-h-screen w-screen overflow-hidden">
-    <div class="home w-full h-full min-h-screen relative">
-
-      <!-- 全屏背景视频 -->
+  <FullScreenPage>
+    <template #media>
       <video
-        class="absolute inset-0 w-full h-full object-cover z-0"
-        src=""
+        ref="videoRef"
+        :src="videoSrc"
         autoplay
         loop
         muted
         playsinline
+        webkit-playsinline
+        preload="auto"
+        @canplay="tryPlayVideo"
+        @loadeddata="tryPlayVideo"
       />
+    </template>
 
-      <div class="absolute inset-0 bg-black/40 z-10" />
-
-      <div class="home-text absolute top-1/2 left-[20%]">
-        <div>STREAM JASMINE</div>
-      </div>
+    <div class="home-text absolute top-[50%] left-[10%] pointer-events-none text-white transform-y-50%">
+      <ColorfulText class="font-bold" :text="text" />
     </div>
-  </div>
+    <div class="home-text absolute top-[50%] right-[10%] pointer-events-none text-white transform-y-50%">
+       <ColorfulText class="font-bold" :text="text" />
+    </div>
+
+  </FullScreenPage>
 </template>
 
 <script setup>
+import videoSrc from '~/assets/img/shipin.mp4'
 
+definePageMeta({
+  layout: 'default',
+})
+
+const videoRef = ref(null)
+const text = ref('STREAM JASMINE')
+
+function tryPlayVideo() {
+  const video = videoRef.value
+  if (!video) return
+
+  video.play().catch(() => {})
+}
+
+onMounted(async () => {
+  await nextTick()
+
+  const video = videoRef.value
+  if (!video) return
+
+  tryPlayVideo()
+
+  if (video.readyState < 2) {
+    video.load()
+  }
+})
 </script>
 
-<style lang="scss">
-@use '@/assets/styles/variable.scss';
-.kun-container {
-  height: calc(100vh - #{$footerHight} - #{$headerHight});
-}
+<style lang="scss" scoped>
 </style>
